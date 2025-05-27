@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Donatius Jardins del Baix Guinardó</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        .termometre-container {
+            width: 100px;
+            height: 300px;
+            border: 2px solid #444;
+            background-color: #eee;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .termometre {
+            background-color: red;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            color: black;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .total-label {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align:center">Ajuda'ns a salvar els jardins!</h1>
+    <div class="total-label">Total recaptat: {{ total }} € / 3000 €</div>
+    <div class="termometre-container">
+        <div class="termometre" style="height: {{ (total / 3000) * 100 }}%;">
+            {{ total }} €
+        </div>
+    </div>
+    <h2>Donants</h2>
+    <ul>
+        {% for d in donacions %}
+            <li>{{ d.data.split(' ')[0] }} - {{ d.nom }} - {{ d.quantitat }} €</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Afegir Donació</title>
+</head>
+<body>
+    <h1>Afegir Donació</h1>
+    <form method="post">
+        <label>Nom: <input type="text" name="nom" placeholder="Anònim"></label><br>
+        <label>Quantitat (€): <input type="number" name="quantitat" step="0.01" required></label><br>
+        <label>Data (opcional): <input type="text" name="data" placeholder="YYYY-MM-DD HH:MM:SS"></label><br>
+        <button type="submit">Afegir</button>
+    </form>
+
+    <h2>Donacions actuals</h2>
+    <ul>
+        {% for d in donacions %}
+            <li>{{ d.data }} - {{ d.nom }}: {{ d.quantitat }} €</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

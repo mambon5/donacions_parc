@@ -1,0 +1,24 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f3f3f3;
+}
+
+.termometre-container {
+    width: 100px;
+    height: 300px;
+    border: 2px solid #444;
+    background-color: #eee;
+    margin: 20px 0;
+    position: relative;
+}
+
+.termometre {
+    background-color: red;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
