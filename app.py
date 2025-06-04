@@ -8,6 +8,7 @@ app = Flask(__name__)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DONACIONS_FILE = os.path.join(BASE_DIR, 'donacions.json')
+ADMIN_USER = 'admin'
 ADMIN_PASSWORD = 'admin123'  # Canvia-ho per seguretat real
 
 def carregar_donacions():
@@ -25,7 +26,7 @@ def auth_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
         auth = request.authorization
-        if not auth or auth.password != ADMIN_PASSWORD:
+        if not auth or auth.username != ADMIN_USER or auth.password != ADMIN_PASSWORD:
             return Response('Accés no autoritzat.', 401, {'WWW-Authenticate': 'Basic realm="Login"'})
         return f(*args, **kwargs)
     return decorated_function
