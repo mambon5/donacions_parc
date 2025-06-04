@@ -6,7 +6,8 @@ from functools import wraps
 
 app = Flask(__name__)
 
-DONACIONS_FILE = 'donacions.json'
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DONACIONS_FILE = os.path.join(BASE_DIR, 'donacions.json')
 ADMIN_PASSWORD = 'admin123'  # Canvia-ho per seguretat real
 
 def carregar_donacions():
