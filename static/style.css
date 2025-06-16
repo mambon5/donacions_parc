@@ -1,24 +1,103 @@
 body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    background-color: #f3f3f3;
-}
+            font-family: sans-serif;
+            background: url('/static/images/foto_parc.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            position: relative;
 
-.termometre-container {
-    width: 100px;
-    height: 300px;
-    border: 2px solid #444;
-    background-color: #eee;
-    margin: 20px 0;
-    position: relative;
-}
+        }
 
-.termometre {
-    background-color: red;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    text-align: center;
-    color: white;
-    font-weight: bold;
-}
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.7); /* capa blanca semitransparent */
+            z-index: -1;
+        }
+
+        .total-label {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: rgb(5, 3, 80);
+            text-shadow: 1 1 1px black;
+        }
+
+        .total-label3 {
+            text-align: center;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: rgb(5, 3, 80);
+            text-shadow: 1 1 1px black;
+        }
+
+        .total-label2 {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: yellow;
+            text-shadow: 0 0 5px black;
+        }
+
+        .termometre-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .termometre-container {
+            width: 90px;
+            height: 400px;
+            background-color: #ddd;
+            border-radius: 50px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 0 5px #999;
+        }
+
+        .termometre {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgb(255, 0, 0), rgb(255, 90, 90));
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            color: white;
+            font-weight: bold;
+            padding-bottom: 5px;
+        }
+
+        .termometre-base {
+            width: 140px;
+            height: 140px;
+            background: radial-gradient(circle, red 60%, darkred 100%);
+            border-radius: 50%;
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            z-index: -1;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        ul {
+            max-width: 600px;
+            margin: 0 auto;
+            padding-left: 20px;
+        }
